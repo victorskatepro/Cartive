@@ -1,0 +1,56 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    tools:context="com.victorsaico.cartive.Fragments.LoginFragment">
+<ScrollView
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:hint="Username"
+            android:id="@+id/correo"
+            app:met_clearButton="true"
+            app:met_iconPadding="0dp"
+            app:met_iconRight="@drawable/ic_avatar"
+            />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            app:met_iconPadding="0dp"
+            app:met_iconRight="@drawable/ic_lock"
+            />
+        <Button
+            android:layout_width="286dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/buttonborder"
+            android:text="LOG IN"
+            android:id="@+id/btningresar"
+            android:textColor="@color/primary_light"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txtregistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="¿No tienes cuenta, registrate aquí?"/>
+    </LinearLayout>
+</ScrollView>
+</android.support.v7.widget.CardView>

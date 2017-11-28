@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="8dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:onClick="detalleClick"
+    android:id="@+id/detalleCard">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/primera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/imgempresa"
+                android:src="@drawable/logo_cartive"
+                />
+            <TextView
+                android:id="@+id/txtempresanombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Civa Buscama"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtnumeroasientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="18 asientos"
+                    android:textSize="15sp"
+                    android:textColor="@color/secundaryTextColor"
+                    />
+
+                <TextView
+                    android:id="@+id/txtnumerohoras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="20 horas"
+                    android:textColor="@color/secundaryTextColor"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/primera"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginBottom="30dp"
+                android:id="@+id/txthorapartida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:text="9:30 AM"/>
+
+            <TextView
+                android:id="@+id/txtnumerocosto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PEN 50"
+                android:textColor="@color/primary"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

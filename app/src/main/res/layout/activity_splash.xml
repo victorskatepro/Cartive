@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@drawable/bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.victorsaico.cartive.Activities.SplashActivity">
+    <ImageView
+        android:layout_margin="22dp"
+        android:background="@drawable/moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"/>
+    <com.cunoraz.continuouscrollable.ContinuousScrollableImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:imageSrc="@drawable/logo_cartive"
+        android:layout_above="@+id/imgbus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        />
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@drawable/river"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"/>
+    <com.cunoraz.continuouscrollable.ContinuousScrollableImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:imageSrc="@drawable/bridge"
+        android:layout_alignParentBottom="true"/>
+    <ImageView
+        android:background="@drawable/bg_bus"
+        android:layout_width="180dp"
+        android:id="@+id/imgbus"
+        android:layout_height="150dp"
+        android:layout_marginBottom="47dp"
+        android:layout_above="@+id/imageView4"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

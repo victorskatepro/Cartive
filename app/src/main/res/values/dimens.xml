@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fghome_intercardview">15dp</dimen>
+    <dimen name="ticket_texsize_15sp">15sp</dimen>
+    <dimen name="ticket_texsize_20sp">20sp</dimen>
+    <dimen name="ticket_marginbottom_10dp">10dp</dimen>
+</resources>
