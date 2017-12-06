@@ -20,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                finish();
             }
         }, splashDuration); // 3 segundos
     }

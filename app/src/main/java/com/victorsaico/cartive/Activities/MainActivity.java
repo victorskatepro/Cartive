@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         int iconSize =40;
         bnve.setIconSize(iconSize, iconSize);
         bnve.setItemHeight(BottomNavigationViewEx.dp2px(this, 65));
+        bnve.setSelectedItemId(R.id.menu_home);
 
         //Cambiar los fragments cuando se precionan
         if (savedInstanceState == null) {

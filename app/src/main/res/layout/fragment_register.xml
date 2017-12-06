@@ -46,28 +46,31 @@
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtregistercorreo"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="Correo"
-            app:met_iconRight="@drawable/ic_email"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            app:met_iconRight="@drawable/ic_email"
             />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtregisterdni"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:digits="0123456789"
-            android:hint="DNI"
-            app:met_iconRight="@drawable/ic_email"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
+            android:digits="0123456789"
+            android:hint="DNI"
+            android:inputType="number"
+            app:met_iconRight="@drawable/ic_email"
 
             />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtregisterpass"
             android:layout_width="320dp"

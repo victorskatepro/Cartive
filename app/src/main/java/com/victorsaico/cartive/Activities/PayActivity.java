@@ -22,6 +22,7 @@ import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
+import com.victorsaico.cartive.Models.CreateTicket;
 import com.victorsaico.cartive.R;
 import com.victorsaico.cartive.Servicies.ApiService;
 import com.victorsaico.cartive.Servicies.ApiServiceGenerator;
@@ -30,6 +31,7 @@ import com.victorsaico.cartive.Servicies.ResponseMessage;
 import org.json.JSONException;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
@@ -51,7 +53,8 @@ public class PayActivity extends AppCompatActivity {
     private Button btnpagar;
     private SweetAlertDialog pDialog;
     private ImageView imgperfil;
-
+    ArrayList<Integer> lista;
+    private int precioTotal;
     private int LOAD_PAYMENT_DATA_REQUEST_CODE;
 
     //configurando la instancia para pagar
@@ -112,7 +115,9 @@ public class PayActivity extends AppCompatActivity {
         destino = getIntent().getExtras().getString("Destino");
         numasiento = getIntent().getExtras().getInt("Asiento");
         fecha = getIntent().getExtras().getString("Fecha");
-
+        lista = (ArrayList<Integer>) getIntent().getSerializableExtra("ListaAsientos");
+        Log.d(TAG,"Asientosselect:"+ lista);
+        precioTotal = precio*lista.size();
         //List<Asiento> asientos = (ArrayList<Asiento>) getIntent().getSerializableExtra("Asientos");
 
 
@@ -122,8 +127,8 @@ public class PayActivity extends AppCompatActivity {
 
         txtdestino.setText(destino);
         txtfecha.setText(fecha);
-        txtnumasiento.setText("Asiento"+numasiento);
-        txtprecio.setText(""+precio);
+        txtnumasiento.setText("Asiento"+lista);
+        txtprecio.setText(""+precioTotal);
         edtNombres.setText(nombre +" "+apellido);
         edtDni.setText(""+dni);
 
@@ -131,7 +136,7 @@ public class PayActivity extends AppCompatActivity {
 
     public void btnpagar(View view) {
 
-        thingToBuy = new PayPalPayment(new BigDecimal(String.valueOf(10)), "USD",
+        thingToBuy = new PayPalPayment(new BigDecimal(precioTotal), "USD",
                 "Pasaje", PayPalPayment.PAYMENT_INTENT_SALE);
         Intent intent = new Intent(PayActivity.this,
                 PaymentActivity.class);
@@ -172,12 +177,15 @@ public class PayActivity extends AppCompatActivity {
     public void register(){
         String id = sharedPreferences.getString("idUsuario", null);
         idviaje = getIntent().getExtras().getInt("Idviaje");
+        String viaje_id = String.valueOf(idviaje);
         String tipo = getIntent().getExtras().getString("Tipo");
         Log.d(TAG, "parametros"+id+idviaje+tipo+numasiento);
-
+        CreateTicket createTicket = new CreateTicket(
+                id,viaje_id,lista
+        );
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
         Call<ResponseMessage> call = null;
-        call = service.createticket(id, idviaje, numasiento);
+        call = service.createticket(createTicket);
         call.enqueue(new Callback<ResponseMessage>() {
             @Override
             public void onResponse(Call<ResponseMessage> call, Response<ResponseMessage> response) {

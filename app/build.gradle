@@ -60,6 +60,9 @@ dependencies {
     //libreria para poder obtener imagenes a partir del nombre
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
+    //libreria para convertir redondas nuestrs imagenes
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

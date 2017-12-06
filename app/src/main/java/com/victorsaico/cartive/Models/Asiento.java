@@ -76,6 +76,8 @@ public class Asiento implements Serializable {
         isSelected = selected;
     }
 
+
+
     @Override
     public String toString() {
         return "Asiento{" +

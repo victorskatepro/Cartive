@@ -61,7 +61,7 @@ public class PerfilFragment extends Fragment {
         String nombre = sharedPreferences.getString("username", null);
         String correo = sharedPreferences.getString("Correo", null);
         int dniperfil = sharedPreferences.getInt("dni", -1);
-
+        Log.d(TAG, "correo"+correo);
         // https://github.com/amulyakhare/TextDrawable
         int color = ColorGenerator.MATERIAL.getColor(nombre);
         TextDrawable drawable = TextDrawable.builder().buildRect(nombre.substring(0, 1), color);
@@ -79,5 +79,6 @@ public class PerfilFragment extends Fragment {
             boolean success = editor.putBoolean("islogged", false).commit();
             Intent intent = new Intent(getContext(), LoginActivity.class);
             startActivity(intent);
+            getActivity().finish();
     }
 }

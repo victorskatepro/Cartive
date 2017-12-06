@@ -44,8 +44,8 @@
             <ImageView
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/ic_profile"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:id="@+id/imgperfilusuario"
                 />
             <TextView
@@ -59,7 +59,8 @@
                 android:text="Asiento 06"/>
         </RelativeLayout>
     <TextView
-        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
@@ -70,9 +71,10 @@
         android:background="@drawable/white_grey_border_bottom"
         android:id="@+id/txtnombre"/>
     <TextView
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/txtnombre"
@@ -89,49 +91,57 @@
         android:gravity="center_horizontal"
         android:id="@+id/infouser"
         android:textSize="20sp"/>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_below="@id/infouser"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/white_grey_border_bottom">
+
+
 
         <TextView
+            android:background="@drawable/white_grey_border_bottom"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/infouser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtdestino"
             android:text="Destino"
             android:textSize="20sp"
             android:drawableLeft="@drawable/ic_location_on"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="20dp"/>
         <TextView
+            android:background="@drawable/white_grey_border_bottom"
+            android:layout_below="@id/txtdestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtprecio"
             android:textSize="20sp"
             android:drawableLeft="@drawable/ic_euro"
             android:text="Precio"
-            android:layout_marginTop="10dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:text="Fecha"
-            android:id="@+id/txtfecha"
-            android:drawableLeft="@drawable/ic_event"
-            />
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"/>
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/txtfecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtprecio"
+        android:layout_below="@+id/txtprecio"
+        android:layout_marginTop="18dp"
+        android:layout_alignEnd="@id/txtdestino"
+        android:background="@drawable/white_grey_border_bottom"
+        android:drawableLeft="@drawable/ic_event"
+        android:padding="10dp"
+        android:text="Fecha"
+        android:textSize="20sp"/>
+
     <Button
         android:onClick="btnpagar"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/btnpagar"
         android:text="Pagar"
+        android:drawableLeft="@drawable/ic_paypal"
         android:layout_marginTop="10dp"/>
 </RelativeLayout>

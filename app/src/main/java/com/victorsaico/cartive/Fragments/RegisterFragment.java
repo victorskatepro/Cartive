@@ -48,7 +48,7 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register, container, false);
-        edtnombre = view.findViewById(R.id.edtregisterusername);
+        edtnombre = view.findViewById(R.id.edtregistername);
         edtapellido = view.findViewById(R.id.edtregisteruserapellido);
         edtusername = view.findViewById(R.id.edtregisterusername);
         edtcorreo = view.findViewById(R.id.edtregistercorreo);
@@ -87,37 +87,37 @@ public class RegisterFragment extends Fragment {
         if(nombre.isEmpty())
         {
             edtnombre.setError("Ingrese su nombre por favor");
-            return;
+
         }
         if(apellido.isEmpty())
         {
             edtapellido.setError("Ingrese su apellido por favor");
-            return;
+
         }
         if(username.isEmpty())
         {
             edtusername.setError("Oops se olvido su username");
-            return;
+
         }
         if(correo.isEmpty())
         {
             edtcorreo.setError("Oops se olvido su correo");
-            return;
+
         }
         if(dni.isEmpty())
         {
             edtdni.setError("Oops se olvido su dni");
-            return;
+
         }
         if(password.isEmpty())
         {
             edtpassword.setError("Oops se olvido su password");
-            return;
+
         }
         if(password2.isEmpty())
         {
             edtpassword2.setError("Oops se olvido su password");
-            return;
+
         }
         //validamos nuestro correo
         //validarEmail(correo);
@@ -130,7 +130,7 @@ public class RegisterFragment extends Fragment {
         if(rpt == false)
         {
             edtcorreo.setError("Correo no valido");
-            return;
+
         }
         initialize(username, correo, nombre, apellido,  dni, password);
     }

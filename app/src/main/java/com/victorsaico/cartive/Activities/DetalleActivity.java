@@ -41,6 +41,7 @@ public class DetalleActivity extends Activity {
     private int position, idviaje;
     private String destino, tipo,fecha;
     private int precio;
+    private ArrayList<Integer> asientosselect = new ArrayList<Integer>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,7 +136,8 @@ public class DetalleActivity extends Activity {
         gridArray.remove(pos);
         gridArray.add(pos, new Asiento("select", seatSelect));
         position = pos + 1;
-        Log.d(TAG, "position:"+position);
+        asientosselect.add(position);
+        Log.d(TAG, "position:"+pos);
         customGridAdapter.notifyDataSetChanged();
     }
     public void seatDeselcted(int pos)
@@ -147,13 +149,8 @@ public class DetalleActivity extends Activity {
     }
 
     public void comprar(View view){
-//        for(Asiento asiento : gridArray)
-//        {
-//            if(asiento.getEstado().equals("select"))
-//            {
-//
-//            }
-//        }
+
+
         Intent intent = new Intent(this,PayActivity.class);
         intent.putExtra("Idviaje", idviaje);
         intent.putExtra("Destino", destino);
@@ -161,7 +158,8 @@ public class DetalleActivity extends Activity {
         intent.putExtra("Asiento", position);
         intent.putExtra("Tipo", tipo);
         intent.putExtra("Fecha", fecha);
-        //intent.putExtra("Asientos", (Serializable) gridArray);
+        intent.putExtra("ListaAsientos", asientosselect);
+        Log.d(TAG,"listaAsientos"+asientosselect);
         startActivity(intent);
     }
     public void retry(View view){
@@ -178,6 +176,5 @@ public class DetalleActivity extends Activity {
         tipo = getIntent().getExtras().getString("Tipo");
         fecha = getIntent().getExtras().getString("Fecha");
         Log.d(TAG,"fecha"+fecha);
-
     }
 }

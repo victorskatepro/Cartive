@@ -69,14 +69,15 @@ public class HomeFragment extends Fragment implements DatePickerListener{
 
         lista = (ListView) view.findViewById(R.id.ContenlistView);
         txtlima = (SearchView) view.findViewById(R.id.buscador);
+
         txthoy = (TextView)view.findViewById(R.id.txthoy);
         picker = (HorizontalPicker) view.findViewById(R.id.datePicker);
         imgselecion = (ImageButton)view.findViewById(R.id.btnseleccionar);
         sliderlayout =(RelativeLayout) view.findViewById(R.id.animationlist);
-
-        imginfo = (ImageView) view.findViewById(R.id.imginformacion);
-
-        //averiguar como poner en un metodo el onclick !!!!no olvidar
+        imginfo = (ImageView)view.findViewById(R.id.imginformacion);
+        RelativeLayout rtlayout = (RelativeLayout) view.findViewById(R.id.rtprincipal);
+        rtlayout.requestFocus();
+                //averiguar como poner en un metodo el onclick !!!!no olvidar
         imgselecion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

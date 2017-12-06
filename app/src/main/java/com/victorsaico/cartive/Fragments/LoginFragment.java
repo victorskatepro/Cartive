@@ -153,12 +153,14 @@ public class LoginFragment extends Fragment {
                 .putString("Correo", usuarios.getCorreo())
                 .putBoolean("islogged", true)
                 .commit();
+        Log.d(TAG, "correologin"+usuarios.getCorreo());
         goMain();
     }
     public void goMain()
     {
         Intent intent = new Intent(getContext(), MainActivity.class);
         startActivity(intent);
+        getActivity().finish();
     }
 
     public void inicializeshared()
